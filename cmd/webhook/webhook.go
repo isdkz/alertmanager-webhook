@@ -2,10 +2,10 @@ package main
 
 import (
 	"flag"
-	"net/http"
 	"github.com/gin-gonic/gin"
 	model "github.com/isdkz/alertmanager-webhook/model"
 	"github.com/isdkz/alertmanager-webhook/notifier"
+	"net/http"
 )
 
 var (
@@ -13,7 +13,7 @@ var (
 	defaultRobot string
 	sport        string
 	msgtype      string
-	tplfile         string
+	tplfile      string
 )
 
 func init() {

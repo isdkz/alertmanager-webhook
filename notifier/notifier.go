@@ -4,14 +4,14 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"net/http"
 	"github.com/isdkz/alertmanager-webhook/model"
 	"github.com/isdkz/alertmanager-webhook/transformer"
+	"net/http"
 )
 
 // Send send markdown message to dingtalk
 func Send(alert model.Alert, RobotUrl string, msgtype string, tplfile string) (err error) {
-	message,  err := transformer.TransformToMessage(alert, msgtype, tplfile)
+	message, err := transformer.TransformToMessage(alert, msgtype, tplfile)
 
 	if err != nil {
 		return
