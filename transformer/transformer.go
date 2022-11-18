@@ -3,7 +3,7 @@ package transformer
 import (
 	"bytes"
 	"github.com/isdkz/alertmanager-webhook/model"
-	"html/template"
+	"text/template"
 	"time"
 )
 
