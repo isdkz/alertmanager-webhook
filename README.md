@@ -1,6 +1,6 @@
 # This project references [alertmanaer-dingtalk-webhook](https://github.com/yunlzheng/alertmanaer-dingtalk-webhook) 
-## Alertmanager Dingtalk Webhook
-Webhook service support send Prometheus 2 alert message to Dingtalk.
+## Alertmanager Webhook
+Webhook service support send Prometheus 2 alert message to GroupRobot.
 
 ## How To Use
 
