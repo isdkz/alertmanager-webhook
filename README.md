@@ -20,9 +20,9 @@ webhook -h
 ```
 
 * -u: default webhook url, all notifaction from alertmanager will direct to this webhook address.
-* -p: the webhook port, webhook server will run in
-* -f: the template file path, the webhook server will use this message template to send the message
-* -t: type of the push message, text and markdown are supprted
+* -p: the webhook port, webhook server will run in(the default is 8080)
+* -f: the template file path, the webhook server will use this message template to send the message(the default is send.tpl)
+* -t: type of the push message, text and markdown are supprted(the default is text)
 
 Or you can overwrite by add annotations to Prometheus alertrule to special the webhook for each alert rule.
 
