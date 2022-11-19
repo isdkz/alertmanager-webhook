@@ -32,7 +32,7 @@ func TransformToMessage(alert model.Alert, msgtype string, tplfile string) (mess
 				Content: buffer.String(),
 			},
 		}
-	case "markdown":
+	case "md":
 		message = &model.QywxMarkdown{
 			MsgType: "markdown",
 			Markdown: &model.Content{

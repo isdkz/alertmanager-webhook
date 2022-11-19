@@ -21,7 +21,7 @@ func init() {
 	flag.BoolVar(&h, "h", false, "help")
 	flag.StringVar(&defaultRobot, "u", "", "global robot webhook url, you can overwrite by alert rule with annotations Robot")
 	flag.StringVar(&sport, "p", "8080", "port on which the webhook server runs")
-	flag.StringVar(&msgtype, "t", "text", "type of the push message, text and markdown are supprted")
+	flag.StringVar(&msgtype, "t", "text", "type of the push message, text and md are supprted")
 	flag.StringVar(&tplfile, "f", "send.tpl", "the template file name")
 }
 
