@@ -6,7 +6,7 @@ Webhook service support send Prometheus 2 alert message to GroupRobot.
 
 ```
 cd cmd/webhook
-go build --ldflags="-w -s" webhook.go
+go build -ldflags="-w -s" webhook.go
 webhook -u=your_robot_url -p webhook_port(default 8080) -f template_file_path(default send.tpl) 
 ```
 
