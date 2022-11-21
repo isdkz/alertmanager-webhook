@@ -3,6 +3,7 @@ package notifier
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/isdkz/alertmanager-webhook/model"
 	"github.com/isdkz/alertmanager-webhook/transformer"
@@ -18,12 +19,13 @@ func Send(alert model.Alert, RobotUrl string, msgtype string, tplfile string) (e
 	}
 	data, err := json.Marshal(message)
 	if err != nil {
-		panic(err)
+		return
 	}
 
 	if len(RobotUrl) == 0 {
-		panic("Robot url not set")
+		return errors.New("Robot url not set")
 	}
+
 	req, err := http.NewRequest(
 		"POST",
 		RobotUrl,
@@ -38,7 +40,7 @@ func Send(alert model.Alert, RobotUrl string, msgtype string, tplfile string) (e
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
-		panic(err)
+		return
 	}
 
 	defer resp.Body.Close()

@@ -11,7 +11,7 @@ import (
 func TransformToMessage(alert model.Alert, msgtype string, tplfile string) (message interface{}, err error) {
 	tmpl, err := template.ParseFiles(tplfile)
 	if err != nil {
-		panic(err)
+		return
 	}
 	buffer := new(bytes.Buffer)
 
@@ -22,7 +22,7 @@ func TransformToMessage(alert model.Alert, msgtype string, tplfile string) (mess
 
 	err = tmpl.Execute(buffer, alert)
 	if err != nil {
-		panic(err)
+		return
 	}
 	switch msgtype {
 	case "text":
