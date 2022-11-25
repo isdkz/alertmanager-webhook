@@ -2,13 +2,14 @@ package transformer
 
 import (
 	"bytes"
-	"github.com/isdkz/alertmanager-webhook/model"
 	"text/template"
 	"time"
+
+	"github.com/isdkz/alertmanager-webhook/model"
 )
 
 // TransformToMarkdown transform alertmanager notification to Message
-func TransformToMessage(alert model.Alert, msgtype string, tplfile string) (message interface{}, err error) {
+func TransformToMessage(alert model.Alert, msgtype string, tplfile string) (message any, err error) {
 	tmpl, err := template.ParseFiles(tplfile)
 	if err != nil {
 		return
